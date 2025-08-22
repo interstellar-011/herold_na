@@ -9,6 +9,8 @@ export default defineConfig(async ({ command, mode }) => {
         input: {
           main: 'index.html',
           404: '404.html',
+          congrats: 'congrats.html',
+          hidden404: '404-hidden.html',
         },
       }
     }
