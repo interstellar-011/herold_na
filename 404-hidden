@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>404 Not Found</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #b64a4a;
+      margin-top: 100px;
+      position: relative;
+    }
+
+    .digit {
+      font-size: 72px;
+      color: #333;
+      display: inline-block;
+    }
+
+    p {
+      font-size: 24px;
+      color: #666;
+    }
+
+    /* Invisible textbox in bottom-left */
+    #secret-box {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      opacity: 5;
+      border: none;
+      background: none;
+      pointer-events: auto;
+      outline: none;
+      cursor: text;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <span class="digit">4</span>
+    <span class="digit">0</span>
+    <span class="digit">4</span>
+  </div>
+  <p>Oops! The page you're looking for doesn't exist.</p>
+
+  <!-- Invisible textbox -->
+  <input type="text" id="secret-box" name="secret" placeholder="">
+
+  <script>
+    const secretBox = document.getElementById('secret-box');
+    const secretCode = 'open-sesame';
+
+    secretBox.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') {
+        if (secretBox.value.trim().toLowerCase() === secretCode) {
+          window.location.href = 'congrats.html';
+        } else {
+          alert('Wrong code!');
+        }
+      }
+    });
+  </script>
+</body>
+</html>
